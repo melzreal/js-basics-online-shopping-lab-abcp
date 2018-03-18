@@ -17,20 +17,30 @@ return cart;
 }
 
    
+
 function viewCart() {
  if(cart.length!==0){
    var allGoods =[];
-   
-    for(var i=0; i < cart.length; i++){ 
-      for(var good in cart[i]){
+    for(var i=0; i < cart.length; i++){
+    var good = Object.keys(cart[i]);
+      for(good in cart[i]){
        allGoods.push(good+ ` at $` + cart[i][good]);
+         
       }
-    }
-   console.log('In your cart, you have ' + allGoods.join(',')+ '. ');   
+    } if(cart.length ===1){
+      return console.log('In your cart, you have ' + allGoods.join(', ')+ '.');
+      } 
+      else if (cart.length ===2){
+        return console.log('In your cart, you have ' + allGoods.join(' and ')+ '.');
+      }  else if (cart.length >= 3){
+        
+        return console.log('In your cart, you have ' + allGoods.join(', ')+ ' and ' + '.');
+  
   }  
   
- console.log('Your shopping cart is empty.');
+ return console.log('Your shopping cart is empty.');
       
+}
 }
  
 
@@ -54,6 +64,7 @@ function total() {
 }
 
 function removeFromCart(item) {
+
   for (var i = 0; i < cart.length; i++) {
     if (cart[i].hasOwnProperty(item)) {
       cart.splice(i, 1);
@@ -61,7 +72,9 @@ function removeFromCart(item) {
   }
  }
  return console.log("That item is not in your cart.");
+
 }
+
 
 function placeOrder(cardNumber) {
   
