@@ -34,13 +34,9 @@ function viewCart() {
         return console.log('In your cart, you have ' + allGoods.join(' and ')+ '.');
       }  else if (cart.length >= 3){
          return console.log('In your cart, you have ' + allGoods.slice(0, allGoods.length -1).join(', ') + ' and ' + allGoods[allGoods.length-1] + '.');
-         
-         
         }  
   
- return console.log('Your shopping cart is empty.');
-      
-    }
+    } return console.log('Your shopping cart is empty.');
 }
  
 
