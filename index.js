@@ -34,7 +34,7 @@ function viewCart() {
         return console.log('In your cart, you have ' + allGoods.join(' and ')+ '.');
       }  else if (cart.length >= 3){
         
-        return console.log('In your cart, you have ' + allGoods.join(', ')+ ' and ' + '.');
+        return console.log('In your cart, you have ' + allGoods.join(', ')+(' and ') + '.');
   
   }  
   
